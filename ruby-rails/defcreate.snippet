@@ -1,0 +1,14 @@
+def create
+  @\<c-r>=NS_underscore(NS_prompt("snippet_classname", "Model ClassName", ""))\<cr> = \<c-r>=snippet_classname\<cr>.new(params[:\<c-r>=NS_underscore(snippet_classname)\<cr>])
+
+  respond_to do |wants|
+    if @\<c-r>=NS_underscore(snippet_classname)\<cr>.save
+      flash[:notice] = '\<c-r>=snippet_classname\<cr> was successfully created.'
+      wants.html { redirect_to(@\<c-r>=NS_underscore(snippet_classname)\<cr>) }
+      wants.xml  { render :xml => @\<c-r>=NS_underscore(snippet_classname)\<cr>, :status => :created, :location => @\<c-r>=NS_underscore(snippet_classname)\<cr> }
+    else
+      wants.html { render :action => "new" }
+      wants.xml  { render :xml => @\<c-r>=NS_underscore(snippet_classname)\<cr>.errors, :status => :unprocessable_entity }
+    end
+  end
+end

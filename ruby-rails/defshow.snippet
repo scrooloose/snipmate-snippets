@@ -1,0 +1,8 @@
+def show
+  @\<c-r>=NS_underscore(NS_prompt("snippet_classname", "Model ClassName", ""))\<cr> = \<c-r>=snippet_classname\<cr>.find(params[:id])
+
+  respond_to do |wants|
+    wants.html # show.html.erb
+    wants.xml  { render :xml => @\<c-r>=NS_underscore(snippet_classname)\<cr> }
+  end
+end

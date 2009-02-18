@@ -1,0 +1,8 @@
+def index
+  @\<c-r>=NS_underscore(NS_prompt("snippet_classname", "Model ClassName", ""))\<cr> = \<c-r>=snippet_classname\<cr>.all
+
+  respond_to do |wants|
+    wants.html # index.html.erb
+    wants.xml  { render :xml => @\<c-r>=NS_underscore(snippet_classname)\<cr>s }
+  end
+end

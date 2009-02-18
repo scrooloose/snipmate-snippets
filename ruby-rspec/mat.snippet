@@ -1,0 +1,24 @@
+class <+ReverseTo+>
+  def initialize(<+param+>)
+    @<+param+> = <+param+>
+  end
+
+  def matches?(actual)
+    @actual = actual
+    # Satisfy expectation here. Return false or raise an error if it's not met.
+    <+@actual.reverse.should == @<+param+>+>
+    true
+  end
+
+  def failure_message
+    "expected #{@actual.inspect} to <++> #{@<+param+>.inspect}, but it didn't"
+  end
+
+  def negative_failure_message
+    "expected #{@actual.inspect} not to <++> #{@<+param+>.inspect}, but it did"
+  end
+end
+
+def <+reverse_to+>(<+expected+>)
+  <++>.new(<+expected+>)
+end

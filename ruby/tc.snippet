@@ -1,0 +1,9 @@
+require "test/unit"
+
+require "<+library_file_name+>"
+
+class Test<+\<c-r>=Snippet_RubyClassNameFromFilename()\<CR>+> < Test::Unit::TestCase
+  def test_<+case_name+>
+    <++>
+  end
+end

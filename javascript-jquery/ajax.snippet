@@ -1,0 +1,18 @@
+$.ajax({
+  url: "<+mydomain.com/url+>",
+  type: "<+POST+>",
+  dataType: "<+xml/html/script/json+>",
+  data: $.param( $("<+Element or Expression+>") ),
+
+  complete: function() {
+    <+//called when complete+>
+  },
+
+  success: function() {
+    <+//called when successful+>
+  },
+
+  error: function() {
+    <+//called when there is an error+>
+  },
+});
