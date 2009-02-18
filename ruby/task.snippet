@@ -1,4 +1,4 @@
-desc "<+Task description+>"
-task :<+<+task_name+> => <+[:<+dependent, :tasks+>]+>+> do
-  <++>
+desc "${1:Task description}"
+task :${2:task_name}${3: => [:dependent, :tasks]} do
+	${4}
 end
