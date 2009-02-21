@@ -1,14 +1,14 @@
 /**
- * @author Sune Simonsen
- * class \<c-r>=NS_prompt('snip_classname', 'class name', '')\<cr>
- * TODO: comment
+ * class $2
+ * @author ${4:`g:snips_author`}
  */
-public class \<c-r>=snip_classname\<cr> {
+${1:public} class ${2:`Snippet_JavaClassNameFromFilename()`}${3} {
 
-    /**
-      * Constructor for \<c-r>=snip_classname\<cr>
-      */
-    public \<c-r>=snip_classname\<cr>(){
-    }
+	/**
+	  * Constructor for $2
+	  */
+	public $2(${5}){
+		${6}
+	}
 
 }

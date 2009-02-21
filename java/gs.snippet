@@ -1,11 +1,9 @@
-//getter for \<c-r>=NS_prompt("snip_varname", "Variable name (eg fooBar)", "")\<cr>
-public \<c-r>=Snippet_JavaInstanceVarType(snip_varname)\<cr> get\<c-r>=NS_camelcase(snip_varname)\<cr>() {
-    return \<c-r>=snip_varname\<cr>;
+//getter for $3
+public ${2:variable_type} get${1:VariableName}() {
+    return ${3:variableName};
 }
 
-//setter for \<c-r>=snip_varname\<cr>
-public void set\<c-r>=NS_camelcase(snip_varname)\<cr>(\<c-r>=Snippet_JavaInstanceVarType(snip_varname)\<cr> \<c-r>=snip_varname\<cr>) {
-   this.\<c-r>=snip_varname\<cr> = \<c-r>=snip_varname\<cr>;
-}
-
-<++>
+//setter for $3
+public void set$1($2 $3) {
+   this.$3 = $3;
+}${4}

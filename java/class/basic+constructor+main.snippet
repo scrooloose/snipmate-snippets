@@ -1,9 +1,17 @@
-<+public+> class <+\<C-R>=Snippet_JavaClassNameFromFilename()\<CR>+><++> {
+/**
+ * class $2
+ * @author ${4:`g:snips_author`}
+ */
+${1:public} class ${2:`Snippet_JavaClassNameFromFilename()`}${3} {
 
-  public <+\<C-R>=Snippet_JavaClassNameFromFilename()\<CR>+>(<++>) {
-  }
+	/**
+	  * Constructor for $2
+	  */
+	public $2(${4}) {
+		${5}
+	}
 
-  public static void main(String args[]) {
-  }
+	public static void main(String args[]) {
+	}
 
 }
