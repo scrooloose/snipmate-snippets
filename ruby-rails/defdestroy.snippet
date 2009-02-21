@@ -1,9 +1,9 @@
 def destroy
-	@\<c-r>=NS_underscore(NS_prompt("snippet_classname", "Model ClassName", ""))\<cr> = \<c-r>=snippet_classname\<cr>.find(params[:id])
-	@\<c-r>=NS_underscore(snippet_classname)\<cr>.destroy
+	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+	@$1.destroy
 
 	respond_to do |wants|
-		wants.html { redirect_to(\<c-r>=NS_underscore(snippet_classname)\<cr>s_url) }
+		wants.html { redirect_to($1s_url) }
 		wants.xml  { head :ok }
 	end
-end
+end${3}

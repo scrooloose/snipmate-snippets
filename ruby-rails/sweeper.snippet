@@ -1,15 +1,15 @@
-class \<c-r>=NS_prompt("snip_classname", "Model classname", "")\<cr>Sweeper < ActionController::Caching::Sweeper
-	observe \<c-r>=snip_classname\<cr>
+class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper
+	observe $1
 
-	def after_save(\<c-r>=NS_underscore(snip_classname)\<cr>)
-		expire_cache(\<c-r>=NS_underscore(snip_classname)\<cr>)
+	def after_save(${2:model_class_name})
+		expire_cache($2)
 	end
 
-	def after_destroy(\<c-r>=NS_underscore(snip_classname)\<cr>)
-		expire_cache(\<c-r>=NS_underscore(snip_classname)\<cr>)
+	def after_destroy($2)
+		expire_cache($2)
 	end
 
-	def expire_cache(\<c-r>=NS_underscore(snip_classname)\<cr>)
+	def expire_cache($2)
 		expire_page
 	end
 end

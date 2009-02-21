@@ -1,14 +1,14 @@
 def update
-	@\<c-r>=NS_underscore(NS_prompt("snippet_classname", "Model ClassName", ""))\<cr> = \<c-r>=snippet_classname\<cr>.find(params[:id])
+	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 
 	respond_to do |wants|
-		if @\<c-r>=NS_underscore(snippet_classname)\<cr>.update_attributes(params[:\<c-r>=NS_underscore(snippet_classname)\<cr>])
-			flash[:notice] = '\<c-r>=snippet_classname\<cr> was successfully updated.'
-			wants.html { redirect_to(@\<c-r>=NS_underscore(snippet_classname)\<cr>) }
+		if @$1.update_attributes(params[:$1])
+			flash[:notice] = '$2 was successfully updated.'
+			wants.html { redirect_to(@$1) }
 			wants.xml  { head :ok }
 		else
 			wants.html { render :action => "edit" }
-			wants.xml  { render :xml => @\<c-r>=NS_underscore(snippet_classname)\<cr>.errors, :status => :unprocessable_entity }
+			wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
 		end
 	end
-end
+end${3}
