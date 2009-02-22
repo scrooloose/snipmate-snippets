@@ -3,7 +3,7 @@ def create
 
 	respond_to do |wants|
 		if @$1.save
-			flash[:notice] = '\<c-r>=snippet_classname\<cr> was successfully created.'
+			flash[:notice] = '$2 was successfully created.'
 			wants.html { redirect_to(@$1) }
 			wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
 		else

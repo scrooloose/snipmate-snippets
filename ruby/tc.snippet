@@ -1,9 +1,9 @@
 require "test/unit"
 
-require "<+library_file_name+>"
+require "${1:library_file_name}"
 
-class Test<+\<c-r>=Snippet_RubyClassNameFromFilename()\<CR>+> < Test::Unit::TestCase
-	def test_<+case_name+>
-		<++>
+class Test${2:`Snippet_RubyClassNameFromFilename()`} < Test::Unit::TestCase
+	def test_${3:case_name}
+		${4}
 	end
 end
