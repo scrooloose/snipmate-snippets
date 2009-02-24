@@ -1,23 +1,23 @@
 "ruby {{{1
-function! Snippet_RubyClassNameFromFilename(...)
+function! Snippet_RubyClassNameFromFilename(name)
     let name = expand("%:t:r")
     if len(name) == 0
-        if a:0 == 0
+        if len(a:name) == 0
             let name = 'MyClass'
         else
-            let name = a:1
+            let name = a:name
         endif
     endif
     return Snippet_Camelcase(name)
 endfunction
 
-function! Snippet_MigrationNameFromFilename(...)
+function! Snippet_MigrationNameFromFilename(name)
     let name = substitute(expand("%:t:r"), '^.\{-}_', '', '')
     if len(name) == 0
-        if a:0 == 0
+        if len(a:name) == 0
             let name = 'MyClass'
         else
-            let name = a:1
+            let name = a:name
         endif
     endif
     return Snippet_Camelcase(name)
@@ -25,39 +25,39 @@ endfunction
 
 
 "python {{{1
-function! Snippet_PythonClassNameFromFilename(...)
+function! Snippet_PythonClassNameFromFilename(name)
     let name = expand("%:t:r")
     if len(name) == 0
-        if a:0 == 0
+        if len(a:name) == 0
             let name = 'MyClass'
         else
-            let name = a:1
+            let name = a:name
         endif
     endif
     return Snippet_Camelcase(name)
 endfunction
 
 "php {{{1
-function! Snippet_PHPClassNameFromFilename(...)
+function! Snippet_PHPClassNameFromFilename(name)
     let name = expand("%:t:r:r")
     if len(name) == 0
-        if a:0 == 0
+        if len(a:name) == 0
             let name = 'MyClass'
         else
-            let name = a:1
+            let name = a:name
         endif
     endif
     return name
 endfunction
 
 "java {{{1
-function! Snippet_JavaClassNameFromFilename(...)
+function! Snippet_JavaClassNameFromFilename(name)
     let name = expand("%:t:r")
     if len(name) == 0
-        if a:0 == 0
+        if len(a:name) == 0
             let name = 'MyClass'
         else
-            let name = a:1
+            let name = a:name
         endif
     endif
     return name
