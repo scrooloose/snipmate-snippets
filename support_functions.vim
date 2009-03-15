@@ -93,7 +93,7 @@ function! s:end_comment()
 endfunction
 
 function! Snippet_Modeline()
-    return s:start_comment() . " vim: set <+settings+>:" . s:end_comment()
+    return s:start_comment() . " vim: set ${1:settings}:" . s:end_comment()
 endfunction
 
 function! Snippet_Camelcase(s)
