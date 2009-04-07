@@ -1,2 +1,2 @@
 require 'net/http'
-res = Net::HTTP.post_form(URI.parse('${1:url}', ${2:params}))
+res = Net::HTTP.post_form URI.parse('${1:url}')${2:, params}
