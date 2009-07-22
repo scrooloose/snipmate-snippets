@@ -7,6 +7,7 @@ task :deploy_local do
   run "cp -r c ~/.vim/snippets/"
   run "cp -r eruby ~/.vim/snippets/"
   run "cp -r eruby-rails ~/.vim/snippets/"
+  run "cp -r haml ~/.vim/snippets/"
   run "cp -r html ~/.vim/snippets/"
   run "cp -r java ~/.vim/snippets/"
   run "cp -r javascript ~/.vim/snippets/"
