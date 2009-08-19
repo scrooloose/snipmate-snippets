@@ -1,13 +1,9 @@
-require 'fileutils'
-include FileUtils
+#require 'fileutils'
+#include FileUtils
 
 namespace :snippets_dir do
   task :find do
-    @snippets_dir = File.join(ENV['VIMFILES'] || if RUBY_PLATFORM =~ /mswin32/
-      "#{ENV['HOME'] || ENV['USERPROFILE']}\\vimfiles"
-    else
-      "~/.vim"
-    end, "snippets")
+    @snippets_dir = File.join(ENV['VIMFILES'] || ENV['HOME'] || ENV['USERPROFILE'], RUBY_PLATFORM =~ /mswin32/ ? "vimfiles" : ".vim", "snippets")
   end
 
   desc "Purge the contents of the vim snippets directory"
@@ -18,7 +14,7 @@ namespace :snippets_dir do
 end
 
 desc "Copy the snippets directories into ~/.vim/snippets"
-task :deploy_local => ["snippets_dir:find", "snippets_dir:purge"] do
+task :deploy_local => ["snippets_dir:purge"] do
   Dir.foreach(".") do |f|
     cp_r f, @snippets_dir, :verbose => true if File.directory?(f) && f =~ /^[^\.]/
   end
