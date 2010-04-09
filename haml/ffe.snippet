@@ -1,4 +1,3 @@
-=error_messages_for :${1:model}
-
--form_for @${2:model} do |f|
-  ${3}
+= form_for @${1:model} do |f|
+  = f.error_messages
+  ${2}
