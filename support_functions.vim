@@ -8,7 +8,7 @@ function! Snippet_RubyClassNameFromFilename(...)
             let name = a:1
         endif
     endif
-    return Snippet_Camelcase(name)
+    return Snippet_Camelcase(substitute(name, '_spec$', '', ''))
 endfunction
 
 function! Snippet_MigrationNameFromFilename(...)
