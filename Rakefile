@@ -3,7 +3,9 @@
 
 namespace :snippets_dir do
   task :find do
-    @snippets_dir = File.join(ENV['VIMFILES'] || ENV['HOME'] || ENV['USERPROFILE'], RUBY_PLATFORM =~ /mswin32/ ? "vimfiles" : ".vim", "snippets")
+    vim_dir = File.join(ENV['VIMFILES'] || ENV['HOME'] || ENV['USERPROFILE'], RUBY_PLATFORM =~ /mswin|msys|mingw32/ ? "vimfiles" : ".vim")
+    pathogen_dir = File.join(vim_dir, "bundle")
+    @snippets_dir = File.directory?(pathogen_dir) ? File.join(pathogen_dir, "snipmate", "snippets") : File.join(vim_dir, "snippets")
   end
 
   desc "Purge the contents of the vim snippets directory"
