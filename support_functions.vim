@@ -82,6 +82,21 @@ function! Snippet_JavaInstanceVarType(name)
     return "<+type+>"
 endfunction
 
+" actionscript {{{1
+function! Snippet_ActionScriptPackageFromPath()
+    let dir = split(expand("%:p"), "/")
+    let target_index = 0
+    let last_index = -1
+    while 1
+        let last_index = index(dir, "src", last_index+1, 1)
+        if last_index != -1
+            let target_index = last_index
+        else
+            break
+        endif
+    endwhile
+    return join(dir[(target_index+1) : -2], '.')
+endfunction
 
 "global {{{1
 function! s:start_comment()
