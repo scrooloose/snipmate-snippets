@@ -1,0 +1,17 @@
+class ${1:ModelName}(models.Model):
+    """${2:docstring}"""
+    ${3}
+    
+    def __unicode__(self):
+        ${4}
+    
+    def save(self, force_insert=False, force_update=False):
+        ${5}
+
+    @models.permalink
+    def get_absolute_url(self):
+         return ('${6:view_or_url_name}' ${7})
+    
+    class Meta:
+        ${8}
+ 
